@@ -1,0 +1,63 @@
+*{
+    background-color: rgb(7, 1, 29);
+    color: azure;
+}
+
+
+h1{
+    text-align: center;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+div{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+input{
+    max-width: 50px;
+    color: white;
+}
+.reinitialiser{
+    background-color: rgb(255, 78, 78);
+    a{
+        background-color: rgb(255, 78, 78);
+        color: rgb(255, 186, 186);
+        text-decoration: none;
+    }
+}
+
+
+
+.correct {
+    background-color: green;
+}
+
+.present{
+    background-color: orange;
+}
+
+.absent{
+    background-color: red;
+}
+
+
+
+table {
+    margin: auto;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+}
+
+
+thead,
+tfoot {
+    background-color: rgb(228 240 245);
+}
+
+th,
+td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+}
