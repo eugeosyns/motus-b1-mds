@@ -15,7 +15,7 @@ div{
     flex-direction: row;
 }
 input{
-    max-width: 50px;
+    max-width: 100px;
     color: white;
 }
 .reinitialiser{
@@ -44,10 +44,12 @@ input{
 
 
 table {
+    
     margin: auto;
     margin-top: 20px;
     border-collapse: collapse;
     border: 2px solid rgb(140 140 140);
+    font-size: 48px;
 }
 
 
@@ -58,6 +60,29 @@ tfoot {
 
 th,
 td {
+    border-spacing: 5px;
     border: 1px solid rgb(160 160 160);
     padding: 8px 10px;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+}
+
+
+@media (max-width: 748px) {
+    th,
+    td{
+        height: 60px;
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    th,
+    td{
+        
+        height: 40px;
+        font-size: 14px;
+        margin: 5px;
+    }
 }
