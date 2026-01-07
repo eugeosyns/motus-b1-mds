@@ -44,7 +44,6 @@ input{
 
 
 table {
-    
     margin: auto;
     margin-top: 20px;
     border-collapse: collapse;
@@ -60,7 +59,6 @@ tfoot {
 
 th,
 td {
-    border-spacing: 5px;
     border: 1px solid rgb(160 160 160);
     padding: 8px 10px;
     height: 200px;
