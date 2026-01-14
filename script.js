@@ -1,14 +1,15 @@
-/* initialisation des mots*/
+// initialisation des mots
 const dictionnaire = ["login","cache","input","debug","stack","array","param","token","logic"];
-/*choix du mot aleatoire*/
+//choix du mot aleatoire
 const motAleatoire = dictionnaire[Math.floor(Math.random() * dictionnaire.length)];
 
+// fonction qui récupère le mot contenu dans l'input 
 const recupererMot = () => {
   const input = document.getElementById('monInput');
   return input.value;
 };
 
-/* fonction qui renvoie un tableau avec chaque lettre du mot */
+// fonction qui renvoie un tableau avec chaque lettre du mot 
 const decomposerMot = (mot) => {
   return mot.toUpperCase().split('');
 };
@@ -19,7 +20,6 @@ const verifierEssai = (essaie, lettres, nouvelleLigne) => {
     essaie.forEach((lettre, i) => {
         const cellule = document.createElement('td');
         cellule.textContent = lettre;
-
         if (lettre === lettres[i]) {
             cellule.classList.add('correct');
             console.log(lettre + " - Bonne position");
@@ -33,7 +33,6 @@ const verifierEssai = (essaie, lettres, nouvelleLigne) => {
             console.log(lettre + " - Pas dans le mot");
             toutCorrect = false;
         }
-
         nouvelleLigne.appendChild(cellule);
     });
     if (toutCorrect == true) {
@@ -56,15 +55,12 @@ const messageDiv = document.getElementById('message');
 const lettres = decomposerMot(motAleatoire);
 const input = document.getElementById('monInput');
 
-/* fonction qui récupère le mot contenu dans l'input */
 
-
-
-
+//lance le script
 bouton.addEventListener('click', () => {
-    
     const motSaisi = recupererMot();
     console.log(motSaisi);
+    // verifie si les condition pour executer le code sont bonne
     if (nbEssaie >= 6) {
         messageDiv.textContent = "vous avez utilisez tout vos essaie ! le mot etait : " + motAleatoire;
         bouton.disabled = true;
@@ -76,28 +72,29 @@ bouton.addEventListener('click', () => {
         messageDiv.style.color = "#c9b458";
         return;
     }
+    //incrémente le nombre d'essaie et le l'affiche
     nbEssaie = nbEssaie + 1 ;
     tentativeDiv.textContent = "tentative numéro" + nbEssaie + "sur 6";
     console.log(nbEssaie)
 
+    //renvoie un tableau contenant les lettres du mot tenté
     const essaie = decomposerMot(motSaisi);
 
     console.log("Mot à trouver:", lettres);
     console.log("Essai:", essaie);
 
+    //ajoute une nouvelle ligne au tableau et la remplis
     const nouvelleLigne = document.createElement('tr');
-    
     let toutCorrect = true;
     verifierEssai(essaie, lettres, nouvelleLigne)
-
     corpsTableau.appendChild(nouvelleLigne);
 
-    // Vider l'input après chaque essaie
+    //Vide l'input après chaque essaie
     input.value = '';
 
 })
 
-
+//permet de valider avec la touche entrée
 input.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         bouton.click();
