@@ -15,27 +15,25 @@ const decomposerMot = (mot) => {
 };
 
 const verifierEssai = (essaie, lettres, nouvelleLigne) => {
-    let toutCorrect = false;
-
+    let somme=0
     essaie.forEach((lettre, i) => {
         const cellule = document.createElement('td');
         cellule.textContent = lettre;
+        console.log(lettre + lettres)
         if (lettre === lettres[i]) {
             cellule.classList.add('correct');
             console.log(lettre + " - Bonne position");
-            toutCorrect = true;
+            somme+=1
         } else if (lettres.includes(lettre)) {
             cellule.classList.add('present');
             console.log(lettre + " - Mauvaise position mais dans le mot");
-            toutCorrect = false;
         } else {
             cellule.classList.add('absent');
             console.log(lettre + " - Pas dans le mot");
-            toutCorrect = false;
         }
         nouvelleLigne.appendChild(cellule);
     });
-    if (toutCorrect == true) {
+    if (somme == essaie.length) {
         messageDiv.textContent = "🎉 Bravo ! Vous avez trouvé le mot !";
         bouton.disabled = true;
         input.disabled = true;
@@ -85,7 +83,6 @@ bouton.addEventListener('click', () => {
 
     //ajoute une nouvelle ligne au tableau et la remplis
     const nouvelleLigne = document.createElement('tr');
-    let toutCorrect = true;
     verifierEssai(essaie, lettres, nouvelleLigne)
     corpsTableau.appendChild(nouvelleLigne);
 
