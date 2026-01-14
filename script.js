@@ -21,16 +21,16 @@ function recupererMot() {
 const bouton = document.getElementById('bouton');
 const corpsTableau = document.getElementById('corpsTableau');
 const messageDiv = document.getElementById('message');
+tentativeDiv = document.getElementById('tentative')
 const input = document.getElementById('monInput');
 
 
 bouton.addEventListener('click', () => {
-    nbEssaie = nbEssaie + 1 ;
-    console.log(nbEssaie)
+    
     const motSaisi = recupererMot();
     console.log(motSaisi);
-    if (nbEssaie > 6) {
-        messageDiv.textContent = "vous avez utilisez tout vos essaie !";
+    if (nbEssaie >= 6) {
+        messageDiv.textContent = "vous avez utilisez tout vos essaie ! le mot etait : " + motAleatoire;
         bouton.disabled = true;
         input.disabled = true;
         return;
@@ -40,6 +40,9 @@ bouton.addEventListener('click', () => {
         messageDiv.style.color = "#c9b458";
         return;
     }
+    nbEssaie = nbEssaie + 1 ;
+    tentativeDiv.textContent = "tentative numéro" + nbEssaie + "sur 6";
+    console.log(nbEssaie)
 
     const essaie = decomposerMot(motSaisi);
 

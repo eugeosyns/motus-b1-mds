@@ -28,7 +28,10 @@ input{
 }
 
 
-
+#tentative{
+    justify-content: flex-end;
+    margin-right: 80px;
+}
 .correct {
     background-color: green;
 }
@@ -38,7 +41,7 @@ input{
 }
 
 .absent{
-    background-color: red;
+    background-color: rgb(128, 128, 128);
 }
 
 
