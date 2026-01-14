@@ -5,7 +5,9 @@ const motAleatoire = dictionnaire[Math.floor(Math.random() * dictionnaire.length
 
 /*fonction qui renvoie un tableau avec chaque lettre du mot*/
 function decomposerMot(mot) {
+    mot = mot.toUpperCase()
   return mot.split('');
+
 }
 
 const lettres = decomposerMot(motAleatoire);
