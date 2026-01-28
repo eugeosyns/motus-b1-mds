@@ -1,26 +1,30 @@
-*{
+* {
     background-color: rgb(7, 1, 29);
     color: azure;
 }
 
 
-h1{
+h1 {
     text-align: center;
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
-div{
+
+div {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
-input{
+
+input {
     max-width: 100px;
     color: white;
 }
-.reinitialiser{
+
+.reinitialiser {
     background-color: rgb(255, 78, 78);
-    a{
+
+    a {
         background-color: rgb(255, 78, 78);
         color: rgb(255, 186, 186);
         text-decoration: none;
@@ -28,19 +32,20 @@ input{
 }
 
 
-#tentative{
+#tentative {
     justify-content: flex-end;
     margin-right: 80px;
 }
+
 .correct {
     background-color: green;
 }
 
-.present{
+.present {
     background-color: orange;
 }
 
-.absent{
+.absent {
     background-color: rgb(128, 128, 128);
 }
 
@@ -73,18 +78,20 @@ td {
 
 
 @media (max-width: 748px) {
+
     th,
-    td{
+    td {
         height: 60px;
         font-size: 36px;
-        
+
     }
 }
 
 @media (max-width: 480px) {
+
     th,
-    td{
-        
+    td {
+
         height: 40px;
         font-size: 14px;
         margin: 5px;
